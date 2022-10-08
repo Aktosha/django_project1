@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9r7dvb8w#5))p0^$=qp9*m&4%eox$3gamz$h&jsoqk^5+_6a11
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'users.apps.UsersConfig',
+    'accounts.apps.AccountsConfig',
+    'posts.apps.PostsConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'accounts.context_processors.get_time'
             ],
         },
     },
